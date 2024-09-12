@@ -14,7 +14,7 @@ namespace Task2.Helpers
 
             if (users == null || users.Count == 0)
             {
-                throw new Exception("Can't import users from provided file");
+                throw new Exception("Невозможно выполнить импорт");
             }
             return users;
         }

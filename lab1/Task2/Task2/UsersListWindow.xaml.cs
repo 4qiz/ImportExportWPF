@@ -16,15 +16,11 @@ namespace Task2
     public partial class UsersListWindow : Window
     {
         public ObservableCollection<LW1User> Users { get; set; } = [];
-        public UsersRepository UsersRepository { get; set; }
 
         public UsersListWindow()
         {
             DataContext = this;
             InitializeComponent();
-
-            using var context = new AppDbContext();
-            UsersRepository = new(context);
         }
 
         private async void ImportUsersFromJsonButton_Click(object sender, RoutedEventArgs e)

@@ -26,8 +26,6 @@ namespace Task2
 
         private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
-            new UsersListWindow().Show();
-            return;
             var login = loginTextBox.Text;
             var password = passwordBox.Password;
             if (login.IsNullOrEmpty() || password.IsNullOrEmpty())
@@ -63,39 +61,7 @@ namespace Task2
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            var login = loginTextBox.Text;
-            var password = passwordBox.Password;
-            if(login.IsNullOrEmpty() || password.IsNullOrEmpty())
-            {
-                MessageBox.Show("Заполните поля");
-                return;
-            }
-            if (UserExist(login))
-            {
-                MessageBox.Show("Пользователь существует");
-                return;
-            }
-            if(Register(login, password))
-            {
-                MessageBox.Show("Успешно зарегистрирован");
-                new UsersListWindow().Show();
-                Close();
-            }
-        }
-
-        private bool UserExist(string login)
-        {
-            return false;
-        }
-
-        private bool Register(string login, string password)
-        {
-            using var context = new AppDbContext();
-            var user = context.Users.FirstOrDefault(u => u.Login == login);
-           
-         
-
-            return true;
+            new RegisterWindow().Show();
         }
     }
 }
