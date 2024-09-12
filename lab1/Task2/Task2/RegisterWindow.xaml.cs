@@ -24,7 +24,7 @@ namespace Task2
             string password = passwordBox.Password;
             if (!ValidateDataHelper.ValidateRegisterData(name, email, login, password, out AppUser? user))
             {
-                MessageBox.Show($"Заполните все поля", "👎👎👎", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Заполните все поля\nДлина пароля больше 5 символов", "👎👎👎", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             try
