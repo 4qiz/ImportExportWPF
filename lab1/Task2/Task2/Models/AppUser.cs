@@ -1,6 +1,6 @@
 ﻿namespace Task2.Models
 {
-    public class LW1User
+    public class AppUser
     {
         public int UserId { get; set; }
 

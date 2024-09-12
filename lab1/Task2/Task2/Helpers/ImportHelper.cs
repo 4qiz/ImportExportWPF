@@ -6,11 +6,11 @@ namespace Task2.Helpers
 {
     public static class ImportHelper
     {
-        public static async Task<List<LW1User>> ImportUsersFromJsonAsync(string filePath)
+        public static async Task<List<AppUser>> ImportUsersFromJsonAsync(string filePath)
         {
             using var reader = new StreamReader(filePath);
             string jsonString = await reader.ReadToEndAsync();
-            List<LW1User>? users = JsonSerializer.Deserialize<List<LW1User>>(jsonString);
+            List<AppUser>? users = JsonSerializer.Deserialize<List<AppUser>>(jsonString);
 
             if (users == null || users.Count == 0)
             {

@@ -9,7 +9,7 @@ namespace Task2.Helpers
 {
     public static class ValidateDataHelper
     {
-        public static bool ValidateRegisterData(string name, string email, string login, string password, out LW1User? user)
+        public static bool ValidateRegisterData(string name, string email, string login, string password, out AppUser? user)
         {
             user = null;
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) ||
@@ -23,7 +23,7 @@ namespace Task2.Helpers
                 return false;
             }
 
-            user = new LW1User
+            user = new AppUser
             {
                 Name = name,
                 Email = email,

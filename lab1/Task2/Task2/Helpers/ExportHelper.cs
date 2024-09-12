@@ -11,7 +11,7 @@ namespace Task2.Helpers
 {
     public static class ExportHelper
     {
-        public static async Task ExportUsersToJsonAsync(List<LW1User> users, string filePath)
+        public static async Task ExportUsersToJsonAsync(List<AppUser> users, string filePath)
         {
             using var writer = new StreamWriter(filePath);
             await writer.WriteAsync(JsonSerializer.Serialize(users));

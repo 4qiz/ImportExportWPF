@@ -15,7 +15,7 @@ namespace Task2
     /// </summary>
     public partial class UsersListWindow : Window
     {
-        public ObservableCollection<LW1User> Users { get; set; } = [];
+        public ObservableCollection<AppUser> Users { get; set; } = [];
 
         public UsersListWindow()
         {
@@ -79,7 +79,7 @@ namespace Task2
             Users.Clear();
             var users = await UsersRepository.GetAllAsync();
 
-            foreach (LW1User user in users)
+            foreach (AppUser user in users)
             {
                 Users.Add(user);
             }

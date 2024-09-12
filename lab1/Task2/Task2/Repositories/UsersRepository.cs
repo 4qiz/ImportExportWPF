@@ -8,20 +8,20 @@ namespace Task2.Repositories
     {
         private static AppDbContext _context = new AppDbContext();
 
-        public static async Task<List<LW1User>> GetAllAsync()
+        public static async Task<List<AppUser>> GetAllAsync()
         {
             using var context = new AppDbContext();
             return await context.Users.ToListAsync();
         }
 
-        public static async Task AddRangeAsync(List<LW1User> users)
+        public static async Task AddRangeAsync(List<AppUser> users)
         {
             using var context = new AppDbContext();
             await context.Users.AddRangeAsync(users);
             await context.SaveChangesAsync();
         }
 
-        public static async Task AddAsync(LW1User user)
+        public static async Task AddAsync(AppUser user)
         {
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();

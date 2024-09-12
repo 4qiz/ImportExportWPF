@@ -22,7 +22,7 @@ namespace Task2
             string email = emailTextBox.Text;
             string login = loginTextBox.Text;
             string password = passwordBox.Password;
-            if (!ValidateDataHelper.ValidateRegisterData(name, email, login, password, out LW1User? user))
+            if (!ValidateDataHelper.ValidateRegisterData(name, email, login, password, out AppUser? user))
             {
                 MessageBox.Show($"Заполните все поля", "👎👎👎", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -40,7 +40,7 @@ namespace Task2
             }
         }
 
-        private async Task<bool> Register(LW1User user)
+        private async Task<bool> Register(AppUser user)
         {
             if (await UsersRepository.UserExistAsync(user.Login))
             {
