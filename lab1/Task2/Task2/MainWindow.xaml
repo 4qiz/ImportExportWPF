@@ -1,0 +1,41 @@
+﻿<Window x:Class="Task2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical"
+            HorizontalAlignment="Center"
+                    Grid.Row="1">
+            <TextBlock Text="Логин"
+                FontSize="32"/>
+            <TextBox x:Name="loginTextBox"
+                     Width="400"
+                     FontSize="32"/>
+            <TextBlock Text="Пароль"
+                 FontSize="32"/>
+            <PasswordBox x:Name="passwordBox"
+                         FontSize="32"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2"
+                    Width="400">
+            <Button x:Name="enterButton"
+                    Click="EnterButton_Click"
+                    Content="Войти"
+                    FontSize="32"/>
+            <Button 
+                 Click="RegisterButton_Click"
+                 Content="Зарегистрироваться"
+                 FontSize="32"/>
+        </StackPanel>
+    </Grid>
+</Window>
