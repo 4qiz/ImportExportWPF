@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using Task2.Data;
+using Task2.Helpers;
 using Task2.Models;
 using Task2.Repositories;
 
@@ -21,7 +22,7 @@ namespace Task2
             string email = emailTextBox.Text;
             string login = loginTextBox.Text;
             string password = passwordBox.Password;
-            if (!ValidateData(name, email, login, password, out LW1User? user))
+            if (!ValidateDataHelper.ValidateRegisterData(name, email, login, password, out LW1User? user))
             {
                 MessageBox.Show($"Заполните все поля", "👎👎👎", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -37,25 +38,6 @@ namespace Task2
             {
                 MessageBox.Show($"Ошибка: {ex.Message}", "👎👎👎", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
-
-        private bool ValidateData(string name, string email, string login, string password, out LW1User? user)
-        {
-            user = null;
-            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) ||
-                string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
-            {
-                return false;
-            }
-
-            user = new LW1User
-            {
-                Name = name,
-                Email = email,
-                Login = login,
-                Password = password
-            };
-            return true;
         }
 
         private async Task<bool> Register(LW1User user)
